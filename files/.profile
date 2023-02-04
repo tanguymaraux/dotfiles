@@ -30,4 +30,4 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export PATH=$PATH:/usr/share/go/bin
-
+feh --bg-scale ~/Documents/Wallpapers/yourlie.png

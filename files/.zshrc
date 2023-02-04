@@ -7,37 +7,13 @@
 export ZSH="/home/pilpur/.oh-my-zsh"
 
 plugins=(git sudo docker docker-compose gitfast ubuntu web-search thefuck 
-    copypath copybuffer dirhistory jsontools sudo)
+    copypath copybuffer dirhistory jsontools sudo alias-finder colored-man-pages
+    extract
 
-alias gccc='gcc -Wextra -Wall -Werror -std=c99 -pedantic'
-alias ls='ls --color=auto'
-alias grep='grep --color -n'
-alias gl='git log --decorate --oneline'
-alias gs='git status'
-alias gdb='gdb -q'
-alias f='fuck'
-alias cf='clang-format -i'
-
-extract () {
-if [ -f $1 ] ; then
-  case $1 in
-    *.tar.bz2)   tar xjf $1     ;;
-    *.tar.gz)    tar xzf $1     ;;
-    *.bz2)       bunzip2 $1     ;;
-    *.rar)       unrar e $1     ;;
-    *.gz)        gunzip $1      ;;
-    *.tar)       tar xf $1      ;;
-    *.tbz2)      tar xjf $1     ;;
-    *.tgz)       tar xzf $1     ;;
-    *.zip)       unzip $1       ;;
-    *.Z)         uncompress $1  ;;
-    *.7z)        7z x $1        ;;
-    *)     echo "'$1' cannot be extracted via extract()" ;;
-     esac
- else
-     echo "'$1' is not a valid file"
- fi
-}
+    # other plugins...
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -62,13 +38,13 @@ ZSH_THEME="awesomepanda"
 # DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+DISABLE_UPDATE_PROMPT="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -106,21 +82,37 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
+# Shell history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt no_share_history     # Don't share history between separate shells
+setopt hist_ignore_all_dups # Remove duplicates from the history
+setopt inc_append_history   # Append to histfile as soon as command is entered
+
+# Misc
+setopt nobeep           # Disable terminal bell
+setopt autocd           # cd if only a directory name was entered
+setopt correct          # Prompt to correct misspelled commands
+setopt hash_list_all    # Correct false reports of spelling errors
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# Cursor
+#echo -e -n "\x1b[\x30 q" # changes to blinking block
+#echo -e -n "\x1b[\x31 q" # changes to blinking block also
+#echo -e -n "\x1b[\x32 q" # changes to steady block
+#echo -e -n "\x1b[\x33 q" # changes to blinking underline
+#echo -e -n "\x1b[\x34 q" # changes to steady underline
+echo -e -n "\x1b[\x35 q" # changes to blinking bar
+#echo -e -n "\x1b[\x36 q" # changes to steady bar
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -129,15 +121,18 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias sucepute="pkill"
+alias gccc='gcc -Wextra -Wall -Werror -std=c99 -pedantic'
+alias ls='ls --color=auto'
+alias grep='grep --color -n'
+alias gl='git log --decorate --oneline'
+alias gs='git status'
+alias gdb='gdb -q'
+alias f='fuck'
+alias cf='clang-format -i'
 
-eval $(thefuck --alias)
 # You can use whatever you want as an alias, like for Mondays:
 eval $(thefuck --alias FUCK)
-export PATH=/usr/share/go/bin:$PATH
 
 
 export NVM_DIR="$HOME/.nvm"
@@ -145,8 +140,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PGDATA="$HOME/postgres_data"
 export PGHOST="/tmp"
+export PATH=/usr/share/go/bin:$PATH
+export EDITOR='vim'
+export EDITOR='vim'
+export GIT_EDITOR='vim'
 
-# alias bat='batcat'
-# source /home/pilpur/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# ssh-add -l > /dev/null
+# if [ $? -gt 0 ]; then
+#     eval $(ssh-agent)
+#     ssh-add ~/.ssh/id_ed25519
+# fi
 
-alias "sucepute"="pkill"
