@@ -6,7 +6,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/pilpur/.oh-my-zsh"
 
-plugins=(git sudo docker docker-compose gitfast ubuntu web-search thefuck 
+plugins=(sudo docker docker-compose gitfast ubuntu web-search thefuck
     copypath copybuffer dirhistory jsontools sudo alias-finder colored-man-pages
     extract
 
