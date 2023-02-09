@@ -38,6 +38,9 @@ createLink(){
             mv ~/$d $olddir/
         fi
         echo "Creating symlink to $d in home directory."
+        if [ -L ~/$d ];then
+            unlink ~/$d
+        fi
         ln -s $target/$d ~/$d
         echo "done"
     done
