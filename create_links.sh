@@ -6,10 +6,10 @@
 ########## Variables
 
 # dotfiles directory
-sourcedir=~/dotfiles/files
+sourcedir=$PWD/files
 
 # old dotfiles backup directory
-olddir=~/dotfiles/dotfiles_old
+olddir=$PWD/dotfiles_old
 
 # list of files/folders to symlink in homedir
 files=".bashrc .gitconfig .profile .vimrc .zshrc"

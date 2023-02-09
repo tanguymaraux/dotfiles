@@ -22,7 +22,7 @@ sudo apt install -y \
     git \
 
 # i3color
-git clone https://github.com/Raymo111/i3lock-color.git
+cd && git clone https://github.com/Raymo111/i3lock-color.git
 cd i3lock-color
 ./build.sh
 ./install-i3lock-color.sh && cd
