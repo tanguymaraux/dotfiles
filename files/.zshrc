@@ -129,6 +129,7 @@ alias gl='git log --decorate --oneline'
 alias gs='git status'
 alias gdb='gdb -q'
 alias f='fuck'
+alias bat='batcat'
 alias cf='clang-format -i'
 
 # You can use whatever you want as an alias, like for Mondays:
