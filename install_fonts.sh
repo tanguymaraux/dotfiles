@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Dirs
 DIR=`pwd`
 FDIR="$HOME/.local/share/fonts"
