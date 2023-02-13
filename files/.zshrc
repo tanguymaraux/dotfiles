@@ -7,7 +7,7 @@
 export ZSH="/home/pilpur/.oh-my-zsh"
 
 plugins=(sudo docker docker-compose gitfast ubuntu web-search thefuck
-    copypath copybuffer dirhistory jsontools sudo alias-finder colored-man-pages
+    copypath copybuffer dirhistory jsontools alias-finder colored-man-pages
     extract
 
     # other plugins...
