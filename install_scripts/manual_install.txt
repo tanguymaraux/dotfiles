@@ -2,6 +2,14 @@
 download .deb : https://discord.com/download
 install : sudo apt install path_to_deb_file
 
+# Vscode
+download .deb : https://code.visualstudio.com/docs/?dv=linux64_deb
+install : sudo apt install path_to_deb_file
+
+# Insomnia
+download .deb : https://insomnia.rest/download
+install : sudo apt install path_to_deb_file
+
 # Golang
 download .tar.gz file : https://go.dev/dl/
 Install following : https://go.dev/doc/install

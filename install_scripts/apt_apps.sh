@@ -1,9 +1,8 @@
 cd && sudo apt update -y && sudo apt upgrade -y
 
-sudo apt install -y autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson apt-transport-https ca-certificates gnupg-agent gnupg lsb-release software-properties-common git
+sudo apt install -y autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson apt-transport-https ca-certificates gnupg-agent gnupg lsb-release software-properties-common git bluetooth
 
-sudo apt autoremove -y && sudo apt install -y wget curl feh neofetch vim zsh htop bat vlc tree zip openssh-client nmap netcat hashcat hashid python3-dev python3-pip  python3-setuptools unzip polybar rofi picom libreoffice flameshot gimp kitty jupyter-notebook imagemagick
-pip3 install thefuck --user
+sudo apt autoremove -y && sudo apt install -y wget curl feh thefuck neofetch vim zsh htop bat vlc tree zip openssh-client nmap netcat hashcat hashid python3-dev python3-pip  python3-setuptools unzip polybar rofi picom libreoffice flameshot gimp kitty jupyter-notebook imagemagick
 
 # i3 Last version (for gaps)
 # see https://i3wm.org/docs/repositories.html
@@ -28,40 +27,33 @@ cd dunst
 make
 sudo make install && cd
 
-# VsCode
-curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
-sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
-sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
-
 # Spotify
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5E3C45D7B312C643
+curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
 
 # Spotify Polybar
-cd && git@github.com:Jvanrhijn/polybar-spotify.git
-
-# Insomnia
-echo "deb [trusted=yes arch=amd64] https://download.konghq.com/insomnia-ubuntu/ default all" | sudo tee -a /etc/apt/sources.list.d/insomnia.list
+cd && git clone https://github.com/Jvanrhijn/polybar-spotify.git
 
 # Openvpn3
 cd && curl -fsSL https://swupdate.openvpn.net/repos/openvpn-repo-pkg-key.pub | gpg --dearmor > /etc/apt/trusted.gpg.d/openvpn-repo-pkg-keyring.gpg
 curl -fsSL https://swupdate.openvpn.net/community/openvpn3/repos/openvpn3-$DISTRO.list >/etc/apt/sources.list.d/openvpn3.list
 
 # Docker
-cd && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+cd && sudo mkdir -m 0755 -p /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-sudo apt update -y
-sudo apt install -y code \
-    spotify-client \
-    insomnia \
-    openvpn3 \
-    docker-ce
+# Google-Chrome
+cd && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt install -y ./google-chrome-stable_current_amd64.deb
+rm ./google-chrome-stable_current_amd64.deb
+
+sudo apt update && sudo apt install -y spotify-client openvpn3 docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Docker
-# sudo usermod -aG docker ${USER}
-# su - ${USER}
-# groups
+sudo groupadd docker && sudo usermod -aG docker $USER
 
 # Oh my zsh
 cd && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -69,3 +61,5 @@ cd && sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/mast
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+sudo apt upgrade -y
