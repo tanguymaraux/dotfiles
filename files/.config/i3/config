@@ -253,7 +253,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always --no-startup-id discord
 
 # Keyboard
-exec_always --no-startup-id setxkbmap us
+exec_always --no-startup-id setxkbmap us -variant intl
 
 #bindsym XF86MonBrightnessUp exec --no-startup-id light -A 2
 #bindsym XF86MonBrightnessDown exec --no-startup-id light -U 2
