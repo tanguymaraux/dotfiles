@@ -227,7 +227,7 @@ for_window [class="Pavucontrol"] floating enable
 # Change gap size
 gaps inner 5
 gaps outer 5
-gaps top 10
+gaps top 35
 smart_borders on
 smart_borders no_gaps
 
