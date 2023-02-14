@@ -2,7 +2,7 @@ cd && sudo apt update -y && sudo apt upgrade -y
 
 sudo apt install -y autoconf gcc make pkg-config libpam0g-dev libcairo2-dev libfontconfig1-dev libxcb-composite0-dev libev-dev libx11-xcb-dev libxcb-xkb-dev libxcb-xinerama0-dev libxcb-randr0-dev libxcb-image0-dev libxcb-util0-dev libxcb-xrm-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libxext-dev libxcb1-dev libxcb-damage0-dev libxcb-dpms0-dev libxcb-xfixes0-dev libxcb-shape0-dev libxcb-render-util0-dev libxcb-render0-dev libxcb-randr0-dev libxcb-composite0-dev libxcb-image0-dev libxcb-present-dev libxcb-glx0-dev libpixman-1-dev libdbus-1-dev libconfig-dev libgl-dev libegl-dev libpcre2-dev libevdev-dev uthash-dev libev-dev libx11-xcb-dev meson apt-transport-https ca-certificates gnupg-agent gnupg lsb-release software-properties-common git bluetooth
 
-sudo apt autoremove -y && sudo apt install -y wget curl feh thefuck neofetch vim zsh htop bat vlc tree zip openssh-client nmap netcat hashcat hashid python3-dev python3-pip  python3-setuptools unzip polybar rofi picom libreoffice flameshot gimp kitty jupyter-notebook imagemagick
+sudo apt autoremove -y && sudo apt install -y wget curl sl feh thefuck neofetch vim zsh htop bat vlc tree zip openssh-client nmap netcat hashcat hashid python3-dev python3-pip  python3-setuptools unzip polybar rofi picom libreoffice flameshot gimp kitty jupyter-notebook imagemagick
 
 # i3 Last version (for gaps)
 # see https://i3wm.org/docs/repositories.html

@@ -131,6 +131,7 @@ alias gdb='gdb -q'
 alias f='fuck'
 alias bat='batcat'
 alias cf='clang-format -i'
+alias sl='sl -e'
 
 # You can use whatever you want as an alias, like for Mondays:
 eval $(thefuck --alias FUCK)
