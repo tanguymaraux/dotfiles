@@ -19,7 +19,7 @@ plugins=(sudo docker docker-compose gitfast ubuntu web-search thefuck
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="awesomepanda"
+ZSH_THEME="nebirhos"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -132,6 +132,8 @@ alias f='fuck'
 alias bat='batcat'
 alias cf='clang-format -i'
 alias sl='sl -e'
+[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+alias icat="kitty +kitten icat"
 
 # You can use whatever you want as an alias, like for Mondays:
 eval $(thefuck --alias FUCK)
@@ -144,7 +146,6 @@ export PGDATA="$HOME/postgres_data"
 export PGHOST="/tmp"
 export PATH=/usr/share/go/bin:$PATH
 export EDITOR='vim'
-export EDITOR='vim'
 export GIT_EDITOR='vim'
 
 # ssh-add -l > /dev/null
@@ -153,3 +154,4 @@ export GIT_EDITOR='vim'
 #     ssh-add ~/.ssh/id_ed25519
 # fi
 
+eval `ssh-agent` > /dev/null
