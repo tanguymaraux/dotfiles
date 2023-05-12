@@ -1,0 +1,6 @@
+[submodule "submodules/polybar-bluetooth"]
+	path = submodules/polybar-bluetooth
+	url = https://github.com/msaitz/polybar-bluetooth.git
+[submodule "submodules/polybar-spotify"]
+	path = submodules/polybar-spotify
+	url = https://github.com/Jvanrhijn/polybar-spotify.git
