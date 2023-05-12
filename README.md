@@ -29,6 +29,11 @@ Some apps need to be installed manually, read the [documentation](install_script
 
 ``bash install_fonts.sh``
 
+# Submodule dependencies
+
+- [polybar-bluetooth](https://github.com/msaitz/polybar-bluetooth)
+- [polybar-spotify](https://github.com/Jvanrhijn/polybar-spotify)
+
 ## License
 
 [MIT License](LICENSE)
