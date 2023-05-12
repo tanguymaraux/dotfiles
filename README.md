@@ -30,3 +30,5 @@ Some apps need to be installed manually, read the [documentation](install_script
 ``bash install_fonts.sh``
 
 ## License
+
+[MIT License](LICENSE)
