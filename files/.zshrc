@@ -139,13 +139,12 @@ alias icat="kitty +kitten icat"
 # You can use whatever you want as an alias, like for Mondays:
 eval $(thefuck --alias FUCK)
 
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 export PGDATA="$HOME/postgres_data"
 export PGHOST="/tmp"
-export PATH=/usr/share/go/bin:$PATH
+export PATH=$PATH:/usr/local/go/bin
 export EDITOR='vim'
 export GIT_EDITOR='vim'
 
