@@ -37,6 +37,8 @@ cd && wget https://raw.githubusercontent.com/betterlockscreen/betterlockscreen/m
 cd && git clone https://github.com/dunst-project/dunst.git
 cd dunst
 make
+# for light script
+sudo usermod -aG video $USER
 sudo make install && cd
 
 # Spotify
