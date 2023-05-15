@@ -75,7 +75,7 @@
     #  %% Literal %
 
     markup = full
-    format = "<b>%a</b>\n%s"
+    format = "<b>%a</b>\n%b"
 
     # Left align the text
     alignment = left
