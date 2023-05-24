@@ -154,7 +154,7 @@ export GIT_EDITOR='vim'
 #     ssh-add ~/.ssh/id_ed25519
 # fi
 
-eval `ssh-agent -t 3600` > /dev/null
+eval `ssh-agent` > /dev/null
 ssh-add ~/.ssh/id_ed25519
 
 alias icat="kitty +kitten icat"
