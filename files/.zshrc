@@ -8,7 +8,7 @@ export ZSH="/home/pilpur/.oh-my-zsh"
 
 plugins=(sudo docker docker-compose gitfast ubuntu web-search thefuck
     copypath copybuffer dirhistory jsontools alias-finder colored-man-pages
-    extract
+    extract battery
 
     # other plugins...
     zsh-autosuggestions

@@ -20,3 +20,7 @@ curl -fsSL https://deb.nodesource.com/setup_19.x | sudo -E bash - &&\
 sudo apt-get install -y nodejs
 
 npm install --global yarn
+
+# ZSH
+add this to your oh-my-zsh promt
+RPROMPT='$(battery_pct_prompt) ...'
