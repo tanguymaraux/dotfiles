@@ -90,4 +90,5 @@ cp -r * ~/.config/spicetify/Themes
 spicetify config current-theme Ziro
 spicetify config color_scheme Rose-Pine
 sudo chmod 777 /usr/share/spotify -R
+spicetify config custom_apps lyrics-plus
 spicetify apply

@@ -13,7 +13,8 @@ olddir=$PWD/dotfiles_old
 
 # list of files/folders to symlink in homedir
 files=".bashrc .gitconfig .profile .vimrc .zshrc"
-dirs=".config/i3 .config/kitty .config/dunst .config/picom .config/polybar"
+dirs=".config/i3 .config/kitty .config/dunst .config/picom .config/polybar
+.config/spicetify"
 dirs_root="scripts .icons clean.rasi colors.rasi powermenu.rasi
     music-launcher.rasi"
 
