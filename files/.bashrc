@@ -126,3 +126,5 @@ export PGHOST="/tmp"
 export PGDATA="$HOME/postgres_data"
 export PGHOST="/tmp"
 
+
+export PATH=$PATH:/home/pilpur/.spicetify

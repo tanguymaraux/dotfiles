@@ -159,3 +159,5 @@ ssh-add ~/.ssh/id_ed25519
 
 alias icat="kitty +kitten icat"
 alias ssh="kitty +kitten ssh"
+
+export PATH=$PATH:/home/pilpur/.spicetify

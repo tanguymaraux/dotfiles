@@ -80,3 +80,14 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 sudo apt upgrade -y
+
+# Spicetify
+curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-cli/master/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/spicetify/spicetify-marketplace/main/resources/install.sh | sh
+git clone --depth=1 https://github.com/spicetify/spicetify-themes.git
+cd spicetify-themes
+cp -r * ~/.config/spicetify/Themes
+spicetify config current-theme Ziro
+spicetify config color_scheme Rose-Pine
+sudo chmod 777 /usr/share/spotify -R
+spicetify apply
