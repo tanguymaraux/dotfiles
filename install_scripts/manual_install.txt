@@ -24,3 +24,7 @@ npm install --global yarn
 # ZSH
 add this to your oh-my-zsh promt
 RPROMPT='$(battery_pct_prompt) ...'
+
+# Lsd
+https://github.com/lsd-rs/lsd/releases
+install : sudo apt install path_to_deb_file

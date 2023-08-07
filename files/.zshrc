@@ -123,7 +123,8 @@ echo -e -n "\x1b[\x35 q" # changes to blinking bar
 # For a full list of active aliases, run `alias`.
 alias sucepute="pkill"
 alias gccc='gcc -Wextra -Wall -Werror -std=c99 -pedantic'
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
+alias ls='lsd'
 alias grep='grep --color -n'
 alias gl='git log --decorate --oneline'
 alias gs='git status'
