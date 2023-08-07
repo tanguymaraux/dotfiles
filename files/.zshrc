@@ -135,6 +135,7 @@ alias cf='clang-format -i'
 alias sl='sl -e'
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
 alias icat="kitty +kitten icat"
+alias ip="ip -c"
 
 # You can use whatever you want as an alias, like for Mondays:
 eval $(thefuck --alias FUCK)
