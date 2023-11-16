@@ -1,0 +1,8 @@
+[12:02:51 2023-09-30] FETCHING Version 2.24.2
+[12:02:51 2023-09-30] DOWNLOADING https://github.com/spicetify/spicetify-cli/releases/download/v2.24.2/spicetify-2.24.2-linux-amd64.tar.gz
+[12:02:52 2023-09-30] EXTRACTING /home/pilpur/.spicetify/spicetify.tar.gz
+[12:02:52 2023-09-30] SETTING EXECUTABLE PERMISSIONS TO /home/pilpur/.spicetify/spicetify
+[12:02:52 2023-09-30] REMOVING /home/pilpur/.spicetify/spicetify.tar.gz
+[12:02:52 2023-09-30] spicetify path already set in /home/pilpur/.bashrc, continuing...
+[12:02:52 2023-09-30] spicetify v2.24.2 was installed successfully to /home/pilpur/.spicetify
+[12:02:52 2023-09-30] Run 'spicetify --help' to get started

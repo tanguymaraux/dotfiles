@@ -126,7 +126,7 @@ alias gccc='gcc -Wextra -Wall -Werror -std=c99 -pedantic'
 #alias ls='ls --color=auto'
 alias ls='lsd'
 alias grep='grep --color -n'
-alias gl='git log --decorate --oneline'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gs='git status'
 alias gd='git diff'
 alias gdb='gdb -q'
