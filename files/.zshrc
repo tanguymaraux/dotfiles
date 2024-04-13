@@ -162,4 +162,15 @@ ssh-add ~/.ssh/id_ed25519
 alias icat="kitty +kitten icat"
 alias ssh="kitty +kitten ssh"
 
-export PATH=$PATH:/home/pilpur/.spicetify
+export PATH=$PATH:/home/pilpur/.spicetify:/home/pilpur/.docker/cli-plugins
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+# intellij
+export INTELLIJ_PATH="$HOME/idea-IU-233.13135.103/"
+export PATH=$INTELLIJ_PATH/bin:$PATH
+
+# Add JBang to environment
+alias j!=jbang
+export PATH="$HOME/.jbang/bin:$PATH"

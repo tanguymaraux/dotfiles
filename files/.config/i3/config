@@ -260,6 +260,8 @@ exec_always --no-startup-id setxkbmap us -variant intl
 #bindsym XF86MonBrightnessDown exec --no-startup-id light -U 2
 bindsym XF86MonBrightnessUp exec $light inc 5
 bindsym XF86MonBrightnessDown exec $light dec 5
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
 
 exec_always --no-startup-id betterlockscreen -u ~/Documents/Wallpapers/hackermen.png
-exec_always --no-stattup-id xrandr --auto --output eDP-1 --mode 1920x1080 --rate 60.00 --primary --right-of HDMI-1-1 --brightness 0.9
+#exec_always --no-startup-id xrandr --auto --output eDP --mode 1920x1080 --rate 60.00 --primary --right-of HDMI-A-0 --brightness 0.9
+exec_always --no-startup-id xrandr --auto --output HDMI-A-0 --left-of eDP

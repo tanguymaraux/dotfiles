@@ -128,3 +128,11 @@ export PGHOST="/tmp"
 
 
 export PATH=$PATH:/home/pilpur/.spicetify
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH=$BUN_INSTALL/bin:$PATH
+
+# Add JBang to environment
+alias j!=jbang
+export PATH="$HOME/.jbang/bin:$PATH"
